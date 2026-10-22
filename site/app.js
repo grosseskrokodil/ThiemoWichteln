@@ -13,7 +13,8 @@
     return;
   }
   document.title = `Wichteln ${data.year}`;
-  document.getElementById('year').textContent = `Weihnachten ${data.year}`;
+  const yearLabel = document.getElementById('year');
+  if (yearLabel) yearLabel.textContent = `Weihnachten ${data.year}`;
   document.getElementById('edition').textContent = data.year;
   document.getElementById('demo').hidden = !data.demo;
   select.options[0].textContent = 'Bitte wähle deinen Namen';
