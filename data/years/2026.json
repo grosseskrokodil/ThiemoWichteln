@@ -1,0 +1,48 @@
+{
+  "year": 2026,
+  "demo": true,
+  "people": [
+    "Alex",
+    "Kim",
+    "Robin",
+    "Sam",
+    "Charlie",
+    "Jamie"
+  ],
+  "exclusions": {
+    "Alex": [
+      "Kim"
+    ],
+    "Kim": [
+      "Alex"
+    ]
+  },
+  "created_at": "2026-10-22T14:25:15.157558+00:00",
+  "previous_year_checked": true,
+  "allocations": {
+    "Alex": [
+      "Sam",
+      "Jamie"
+    ],
+    "Kim": [
+      "Robin",
+      "Jamie"
+    ],
+    "Robin": [
+      "Alex",
+      "Sam"
+    ],
+    "Sam": [
+      "Robin",
+      "Charlie"
+    ],
+    "Charlie": [
+      "Alex",
+      "Kim"
+    ],
+    "Jamie": [
+      "Kim",
+      "Charlie"
+    ]
+  }
+}

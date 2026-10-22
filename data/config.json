@@ -1,0 +1,6 @@
+{
+  "year": 2026,
+  "demo": true,
+  "people": ["Alex", "Kim", "Robin", "Sam", "Charlie", "Jamie"],
+  "exclusions": {"Alex": ["Kim"], "Kim": ["Alex"]}
+}

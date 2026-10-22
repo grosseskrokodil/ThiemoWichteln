@@ -1,0 +1,13 @@
+{
+  "year": 2025,
+  "demo": true,
+  "people": ["Alex", "Kim", "Robin", "Sam", "Charlie", "Jamie"],
+  "allocations": {
+    "Alex": ["Kim", "Robin"],
+    "Kim": ["Robin", "Sam"],
+    "Robin": ["Sam", "Charlie"],
+    "Sam": ["Charlie", "Jamie"],
+    "Charlie": ["Jamie", "Alex"],
+    "Jamie": ["Alex", "Kim"]
+  }
+}
