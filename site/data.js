@@ -16,32 +16,32 @@ window.WICHTEL_DATA = {
       "Levke"
     ],
     "Ute": [
-      "Janne",
-      "Abed"
+      "Lukas",
+      "Wiebke"
     ],
     "Janne": [
-      "Lukas",
-      "Abed"
+      "Diana",
+      "Sven"
     ],
     "Diana": [
-      "Lukas",
-      "Janne"
+      "Ute",
+      "Abed"
     ],
     "Wiebke": [
-      "Ute",
-      "Diana"
+      "Sven",
+      "Abed"
     ],
     "Sven": [
       "Ute",
-      "Levke"
+      "Janne"
     ],
     "Levke": [
-      "Wiebke",
-      "Sven"
+      "Lukas",
+      "Diana"
     ],
     "Abed": [
-      "Diana",
-      "Sven"
+      "Janne",
+      "Levke"
     ]
   },
   "demo": true

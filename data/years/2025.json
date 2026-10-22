@@ -1,6 +1,6 @@
 {
   "year": 2025,
-  "demo": true,
+  "demo": false,
   "people": [
     "Lukas",
     "Ute",
@@ -13,36 +13,36 @@
   ],
   "allocations": {
     "Lukas": [
-      "Ute",
-      "Janne"
+      "Janne",
+      "Sven"
     ],
     "Ute": [
       "Janne",
-      "Diana"
+      "Abed"
     ],
     "Janne": [
-      "Diana",
+      "Levke",
       "Wiebke"
     ],
     "Diana": [
       "Wiebke",
-      "Sven"
+      "Ute"
     ],
     "Wiebke": [
-      "Sven",
-      "Levke"
+      "Diana",
+      "Ute"
     ],
     "Sven": [
-      "Levke",
-      "Abed"
+      "Diana",
+      "Lukas"
     ],
     "Levke": [
       "Abed",
-      "Lukas"
+      "Sven"
     ],
     "Abed": [
       "Lukas",
-      "Ute"
+      "Levke"
     ]
   }
 }
