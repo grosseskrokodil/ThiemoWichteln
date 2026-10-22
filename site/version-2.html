@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#254c3c">
+  <meta name="description" content="Dein persönlicher Wichtelmoment. Zwei Menschen, zwei Geschenke.">
+  <title>Wichteln</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="version-two">
+  <main class="page">
+    <header class="masthead"><a class="wordmark" href="./">✳ <span>Wichteln</span></a><span class="year" id="year">Weihnachten</span></header>
+    <div class="demo" id="demo" hidden>Entwurf · Testauslosung, keine echte Jahresrunde</div>
+    <section class="hero" aria-labelledby="title">
+      <div class="branch" aria-hidden="true">✳</div>
+      <h1 id="title" data-year-title>Wichtelrunde <span id="edition">2026</span></h1>
+      <p>Verrate, wer du bist</p>
+    </section>
+    <section class="letter" aria-labelledby="letter-title">
+      <div class="letter-top"><span class="letter-line"></span><svg class="envelope" viewBox="0 0 40 32" fill="none" aria-hidden="true"><rect x="2" y="3" width="36" height="26" rx="3"/><path d="m3 5 17 13L37 5M3 27l11-11m23 11L26 16"/></svg><span class="letter-line"></span></div>
+      <h2 id="letter-title">Dein Wichtelbrief</h2>
+      <form id="reveal-form">
+        <label for="person">Wie heißt du?</label>
+        <select id="person" name="person" required disabled><option value="">Namen werden geladen …</option></select>
+        <button id="open-letter" type="submit" disabled>Meinen Brief öffnen <span aria-hidden="true">↗</span></button>
+      </form>
+      <dialog id="confirmation" aria-labelledby="confirmation-title" aria-describedby="confirmation-description">
+        <form method="dialog" class="confirmation-content">
+          <span class="eyebrow">Kurz sichergehen</span>
+          <h2 id="confirmation-title">Ist das dein Brief?</h2>
+          <p id="confirmation-description"></p>
+          <div class="confirmation-actions">
+            <button class="secondary" id="cancel-open" value="cancel" autofocus>Nein, zurück</button>
+            <button class="confirm-button" id="confirm-open" value="confirm">Ja, das bin ich</button>
+          </div>
+        </form>
+      </dialog>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+      <div id="result" class="result" hidden aria-live="polite">
+        <p class="result-intro" id="greeting"></p><h3>Du beschenkst dieses Jahr</h3>
+        <div class="recipients" id="recipients"></div><p class="closing">Viel Freude beim Aussuchen und Verschenken.</p>
+        <button class="secondary" id="close-letter" type="button">Brief wieder schließen</button>
+      </div>
+      <noscript><p>Bitte aktiviere JavaScript und öffne die Seite direkt in Safari, Chrome oder einem anderen Browser.</p></noscript>
+    </section>
+    <footer><div class="footer-links"><a href="https://github.com/grosseskrokodil/ThiemoWichteln/actions/workflows/draw.yml">Organisation</a></div></footer>
+  </main>
+</body>
+</html>
