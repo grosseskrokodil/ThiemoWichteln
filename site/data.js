@@ -1,37 +1,47 @@
 window.WICHTEL_DATA = {
   "year": 2026,
   "people": [
-    "Alex",
-    "Kim",
-    "Robin",
-    "Sam",
-    "Charlie",
-    "Jamie"
+    "Lukas",
+    "Ute",
+    "Janne",
+    "Diana",
+    "Wiebke",
+    "Sven",
+    "Levke",
+    "Abed"
   ],
   "allocations": {
-    "Alex": [
-      "Sam",
-      "Jamie"
+    "Lukas": [
+      "Wiebke",
+      "Levke"
     ],
-    "Kim": [
-      "Robin",
-      "Jamie"
+    "Ute": [
+      "Janne",
+      "Abed"
     ],
-    "Robin": [
-      "Alex",
-      "Sam"
+    "Janne": [
+      "Lukas",
+      "Abed"
     ],
-    "Sam": [
-      "Robin",
-      "Charlie"
+    "Diana": [
+      "Lukas",
+      "Janne"
     ],
-    "Charlie": [
-      "Alex",
-      "Kim"
+    "Wiebke": [
+      "Ute",
+      "Diana"
     ],
-    "Jamie": [
-      "Kim",
-      "Charlie"
+    "Sven": [
+      "Ute",
+      "Levke"
+    ],
+    "Levke": [
+      "Wiebke",
+      "Sven"
+    ],
+    "Abed": [
+      "Diana",
+      "Sven"
     ]
   },
   "demo": true

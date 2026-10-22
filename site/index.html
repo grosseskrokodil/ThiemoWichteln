@@ -13,7 +13,7 @@
 <body>
   <main class="page">
     <header class="masthead"><a class="wordmark" href="./">✳ <span>Wichteln</span></a><span class="year" id="year">Weihnachten</span></header>
-    <div class="demo" id="demo" hidden>Erster Entwurf · Beispieldaten</div>
+    <div class="demo" id="demo" hidden>Entwurf · Testauslosung, keine echte Jahresrunde</div>
     <section class="hero" aria-labelledby="title">
       <div class="branch" aria-hidden="true">✳</div>
       <span class="eyebrow">Für die Weihnachtsrunde <span id="edition"></span></span>
@@ -28,6 +28,17 @@
         <select id="person" name="person" required disabled><option value="">Namen werden geladen …</option></select>
         <button id="open-letter" type="submit" disabled>Meinen Brief öffnen <span aria-hidden="true">↗</span></button>
       </form>
+      <dialog id="confirmation" aria-labelledby="confirmation-title" aria-describedby="confirmation-description">
+        <form method="dialog" class="confirmation-content">
+          <span class="eyebrow">Kurz sichergehen</span>
+          <h2 id="confirmation-title">Ist das dein Brief?</h2>
+          <p id="confirmation-description"></p>
+          <div class="confirmation-actions">
+            <button class="secondary" id="cancel-open" value="cancel" autofocus>Nein, zurück</button>
+            <button class="confirm-button" id="confirm-open" value="confirm">Ja, das bin ich</button>
+          </div>
+        </form>
+      </dialog>
       <p class="status" id="status" role="status" aria-live="polite"></p>
       <div id="result" class="result" hidden aria-live="polite">
         <p class="result-intro" id="greeting"></p><h3>Du beschenkst dieses Jahr</h3>
@@ -36,7 +47,7 @@
       </div>
       <noscript><p>Bitte aktiviere JavaScript und öffne die Seite direkt in Safari, Chrome oder einem anderen Browser.</p></noscript>
     </section>
-    <footer><p>Zwei Geschenke, die von Herzen kommen.</p><div class="footer-links"><button type="button" class="text-button" id="about-toggle" aria-expanded="false" aria-controls="about">So funktioniert’s</button><span aria-hidden="true">·</span><a href="https://github.com/grosseskrokodil/ThiemoWichteln/actions/workflows/draw.yml">Organisation</a></div>
+    <footer><div class="footer-links"><button type="button" class="text-button" id="about-toggle" aria-expanded="false" aria-controls="about">So funktioniert’s</button><span aria-hidden="true">·</span><a href="https://github.com/grosseskrokodil/ThiemoWichteln/actions/workflows/draw.yml">Organisation</a></div>
     <div class="about" id="about" hidden><p>Jede Person beschenkt zwei andere und erhält selbst zwei Geschenke. Die Auslosung wird einmal für den Jahrgang gespeichert. Nur dieselbe Zweierkombination aus dem Vorjahr ist ausgeschlossen; eine Person darf erneut dabei sein.</p><p>Diese erste Version prüft die Identität nicht. Wer einen anderen Namen auswählt, kann dessen Ergebnis sehen.</p></div></footer>
   </main>
 </body>

@@ -71,3 +71,12 @@ class AllocationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             with self.assertRaisesRegex(ValueError, 'Vorjahr'):
                 w.load_previous(Path(directory), 2026)
+
+    def test_joining_and_leaving_people(self):
+        for people in [self.people + ['New'], self.people[:-1], self.people[:-2] + ['New', 'Other', 'Third']]:
+            config = {'year': 2026, 'people': people, 'exclusions': {}}
+            for seed in range(10):
+                result = w.draw(config, self.previous, random.Random(seed))
+                w.validate_allocation(config, result, self.previous)
+                self.assertEqual(set(result), set(people))
+                self.assertTrue(all(r in people for pair in result.values() for r in pair))

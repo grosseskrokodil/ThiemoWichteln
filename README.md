@@ -6,11 +6,22 @@ ist ausgeschlossen. Ein einzelner Empfänger darf sich wiederholen.
 
 ## Erster Entwurf
 
-Tannengrünes Layout mit Papierfarben, ohne Fotos. Alle Namen und die
-Vorjahresauslosung sind erfundene Beispiele. Der gespeicherte Jahrgang
+Tannengrünes Layout mit Papierfarben, ohne Fotos. Die acht Namen stammen
+aus dem ursprünglichen Projekt. Die Vorjahresauslosung ist weiterhin ein
+erfundenes Beispiel, persönliche Ausschlüsse sind noch nicht übernommen.
+Der gespeicherte Jahrgang
 2026 ist eine Demo, keine echte Weihnachtsrunde. Zugriffsschutz ist noch
 nicht umgesetzt: Jeder kann andere Namen auswählen. Alle Ergebnisse
 sind im öffentlichen Repository und in der Webseite lesbar.
+
+Vor dem Öffnen wird der ausgewählte Name in einem Bestätigungsdialog
+nochmals angezeigt. Das schützt gegen versehentliches Öffnen, prüft aber
+nicht die Identität. Abbrechen oder Escape zeigt keine Empfänger an.
+
+Teilnehmer können zwischen den Jahren hinzukommen oder ausscheiden.
+Vor der Auslosung die aktuelle Teilnehmerliste und alle Ausschlüsse
+aktualisieren. Für neue Personen gilt kein Vorjahresausschluss. Empfänger
+werden ausschließlich aus der aktuellen Teilnehmerliste ausgewählt.
 
 ## Lokal ansehen
 

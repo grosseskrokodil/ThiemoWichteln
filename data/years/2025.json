@@ -1,13 +1,48 @@
 {
   "year": 2025,
   "demo": true,
-  "people": ["Alex", "Kim", "Robin", "Sam", "Charlie", "Jamie"],
+  "people": [
+    "Lukas",
+    "Ute",
+    "Janne",
+    "Diana",
+    "Wiebke",
+    "Sven",
+    "Levke",
+    "Abed"
+  ],
   "allocations": {
-    "Alex": ["Kim", "Robin"],
-    "Kim": ["Robin", "Sam"],
-    "Robin": ["Sam", "Charlie"],
-    "Sam": ["Charlie", "Jamie"],
-    "Charlie": ["Jamie", "Alex"],
-    "Jamie": ["Alex", "Kim"]
+    "Lukas": [
+      "Ute",
+      "Janne"
+    ],
+    "Ute": [
+      "Janne",
+      "Diana"
+    ],
+    "Janne": [
+      "Diana",
+      "Wiebke"
+    ],
+    "Diana": [
+      "Wiebke",
+      "Sven"
+    ],
+    "Wiebke": [
+      "Sven",
+      "Levke"
+    ],
+    "Sven": [
+      "Levke",
+      "Abed"
+    ],
+    "Levke": [
+      "Abed",
+      "Lukas"
+    ],
+    "Abed": [
+      "Lukas",
+      "Ute"
+    ]
   }
 }
