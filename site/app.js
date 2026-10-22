@@ -59,8 +59,4 @@
     status.textContent = ''; result.hidden = false;
   });
   document.getElementById('close-letter').addEventListener('click', () => { close(); open.focus(); });
-  document.getElementById('about-toggle').addEventListener('click', event => {
-    const about = document.getElementById('about'); about.hidden = !about.hidden;
-    event.currentTarget.setAttribute('aria-expanded', String(!about.hidden));
-  });
 })();
