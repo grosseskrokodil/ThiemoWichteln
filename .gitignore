@@ -12,3 +12,12 @@ venv/
 # Betriebssystem
 .DS_Store
 Thumbs.db
+
+# Persönliche Wunschlisten-Links, Admin-Schlüssel und lokale Hilfsprogramme
+.private/
+*service-account*.json
+*firebase-adminsdk*.json
+node_modules/
+.firebase/
+firebase-debug.log*
+firestore-debug.log*

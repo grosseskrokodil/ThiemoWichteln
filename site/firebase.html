@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#254c3c"><meta name="referrer" content="no-referrer">
+  <title>Wichteln</title><link rel="stylesheet" href="wishes.css">
+  <script type="module" src="wishes-app.js"></script>
+</head>
+<body>
+  <main class="wish-page">
+    <header class="masthead"><span class="wordmark"><img class="wordmark-star" src="star.svg" alt=""> Wichteln</span><span class="year" id="year">Weihnachten</span></header>
+    <section class="hero" aria-labelledby="title"><div class="branch" aria-hidden="true"><img src="star.svg" alt=""></div><span class="eyebrow">Für die Weihnachtsrunde <span id="edition">…</span></span><h1 id="title">Post für dich.</h1><p>Deine zwei Wichtel warten schon.<br>Verrate uns zuerst, wer du bist.</p></section>
+    <div id="message" class="wish-message" role="status" aria-live="polite">Persönlicher Zugang wird geladen …</div>
+    <section id="choose-person" class="wish-panel">
+      <h2 id="identity-name">Dein Wichtelbrief</h2>
+      <form id="identity-form"><button class="wish-primary" id="identity-submit" disabled>Meinen Brief öffnen <img src="arrow.svg" alt="" width="21" height="21"></button></form>
+    </section>
+    <section id="dashboard" hidden>
+      <div class="dashboard-header"><h2 id="welcome"></h2></div>
+      <section class="wish-panel"><h2>Du beschenkst dieses Jahr</h2><p id="assignment-names" class="assigned-names"></p></section>
+      <nav id="list-navigation" class="list-navigation" aria-label="Wunschliste auswählen"></nav>
+      <section class="wish-panel" aria-labelledby="list-title">
+        <h2 id="list-title"></h2><p id="list-hint" class="notice"></p>
+        <div id="wish-list" class="wish-list"></div><p id="empty-list" class="notice" hidden>Noch keine Wünsche eingetragen.</p>
+        <div id="editor" hidden><form class="wish-form" id="wish-form">
+          <label for="wish-text">Dein Wunsch</label><textarea id="wish-text" maxlength="1000" required placeholder="Was würde dir Freude machen?"></textarea>
+          <label for="wish-link">Produktlink (optional)</label><input id="wish-link" type="url" maxlength="2000" placeholder="https://…">
+          <div class="wish-actions"><button class="wish-primary" id="save-wish" data-write>Wunsch hinzufügen</button><button type="button" class="secondary" id="cancel-edit" hidden data-write>Abbrechen</button></div>
+        </form></div>
+      </section>
+    </section>
+    <dialog id="identity-dialog" aria-labelledby="confirm-person-title"><form method="dialog" class="confirmation-content"><h2 id="confirm-person-title"></h2><p>Bestätige bitte, dass das dein eigener Brief ist. Erst danach werden deine beiden Empfänger geladen.</p><div class="confirmation-actions"><button class="secondary" value="cancel" autofocus>Nein, zurück</button><button class="confirm-button" value="confirm">Ja, das bin ich</button></div></form></dialog>
+    <dialog id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-description"><form method="dialog" class="confirmation-content"><h2 id="delete-title">Wunsch löschen?</h2><p id="delete-description"></p><div class="confirmation-actions"><button class="secondary" value="cancel" autofocus>Behalten</button><button class="confirm-button" value="delete">Wunsch löschen</button></div></form></dialog>
+    <noscript>Bitte aktiviere JavaScript, um deinen Wichtelbrief und die Wunschlisten zu verwenden.</noscript>
+    <footer>Dein persönlicher Link gilt auch für künftige Wichtelrunden. Bitte gib ihn nicht weiter.</footer>
+  </main>
+</body>
+</html>

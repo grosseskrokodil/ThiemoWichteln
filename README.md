@@ -1,13 +1,28 @@
 # Wichteln
 
+## Vier Seitenversionen
+
+- `site/index.html`: ohne Firebase, Ursprungstext.
+- `site/version-2.html`: ohne Firebase, reduzierter Text.
+- `site/firebase.html`: mit Firebase, Ursprungstext und persönlichem Link.
+- `site/firebase-kurz.html`: mit Firebase, reduzierter Text und persönlichem Link.
+
+Firebase-Konfiguration, dauerhafte persönliche Links und private
+Jahresauslosungen: siehe [FIREBASE-EINRICHTUNG.md](FIREBASE-EINRICHTUNG.md).
+Die Firebase-Seiten verwenden keine öffentliche Zuordnungsdatei.
+Geheime Auslosungen künftig ausschließlich unter `.private/firebase/`
+verwalten. Die folgenden älteren lokalen Befehle und der GitHub-Workflow
+für die Auslosung betreffen die beiden Vergleichsseiten ohne Firebase.
+
 Mobile Webseite für die Weihnachtsrunde. Jede Person beschenkt zwei andere
 und erhält zwei Geschenke. Nur dieselbe Zweierkombination wie im Vorjahr
 ist ausgeschlossen. Ein einzelner Empfänger darf sich wiederholen.
 
 
-2026 ist eine Demo, keine echte Weihnachtsrunde. Zugriffsschutz ist noch
-nicht umgesetzt: Jeder kann andere Namen auswählen. Alle Ergebnisse
-sind im öffentlichen Repository und in der Webseite lesbar.
+Die Varianten ohne Firebase verwenden die bestehende Jahresauslosung.
+Dort kann jeder andere Namen auswählen. Diese bisherigen Ergebnisse sind
+im öffentlichen Repository und in der Webseite lesbar. Der persönliche
+Zugriff der neuen Firebase-Seiten ist davon getrennt.
 
 Vor dem Öffnen wird der ausgewählte Name in einem Bestätigungsdialog
 nochmals angezeigt. Das schützt gegen versehentliches Öffnen, prüft aber

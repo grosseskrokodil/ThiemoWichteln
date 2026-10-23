@@ -1,4 +1,4 @@
-name: Jahrgang auslosen
+name: Jahrgang auslosen (ohne Firebase)
 on:
   workflow_dispatch:
 permissions:

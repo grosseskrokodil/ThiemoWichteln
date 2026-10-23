@@ -1,0 +1,14 @@
+{
+  "name": "wichteln",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/wishes-model.test.js",
+    "test:rules": "firebase emulators:exec --only firestore --project demo-wichteln \"node --test tests/firestore-rules.test.js && python -m unittest discover -s tests -p test_firebase_publish.py -v\""
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "firebase": "^13.1.0",
+    "firebase-tools": "^15.34.1"
+  }
+}

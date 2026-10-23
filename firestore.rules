@@ -1,0 +1,84 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function session() { return get(/databases/$(database)/documents/wishSessions/$(request.auth.uid)).data; }
+    function key() { return get(/databases/$(database)/documents/accessKeys/$(session().keyHash)).data; }
+    function validAccess() { return signedIn() && key().enabled == true; }
+    function current() { return get(/databases/$(database)/documents/settings/current).data; }
+    function confirmed(year, revision) {
+      return validAccess() && current().enabled == true && current().year == year
+        && current().revision == revision && session().confirmedRevision == revision;
+    }
+    function assignment(year, revision) {
+      return get(/databases/$(database)/documents/rounds/$(year)/revisions/$(revision)/assignments/$(key().personId)).data;
+    }
+    function participant(year, revision) {
+      return confirmed(year, revision)
+        && exists(/databases/$(database)/documents/rounds/$(year)/revisions/$(revision)/assignments/$(key().personId));
+    }
+    function owner(year, person) { return participant(year, current().revision) && key().personId == person; }
+    function giver(year, revision, person) {
+      return participant(year, revision) && key().personId != person && person in assignment(year, revision).recipients;
+    }
+    function validWish(data) {
+      return data.keys().hasAll(['text','link','createdAt','updatedAt'])
+        && data.keys().hasOnly(['text','link','createdAt','updatedAt'])
+        && data.text is string && data.text.size() > 0 && data.text.size() <= 1000
+        && data.link is string && data.link.size() <= 2000
+        && (data.link == '' || data.link.matches('https?://[^\\s]+'))
+        && data.updatedAt == request.time;
+    }
+    match /accessKeys/{hash} {
+      // Nur Name + feste Identität. Keine Jahreszuordnung in diesem Dokument.
+      allow get: if signedIn() && hash.size() == 64 && resource.data.enabled == true;
+      allow list, write: if false;
+    }
+    match /wishSessions/{uid} {
+      allow get, delete: if signedIn() && request.auth.uid == uid;
+      allow list: if false;
+      allow create, update: if signedIn() && request.auth.uid == uid
+        && request.resource.data.keys().hasAll(['keyHash','confirmedRevision'])
+        && request.resource.data.keys().hasOnly(['keyHash','confirmedRevision'])
+        && request.resource.data.keyHash is string && request.resource.data.keyHash.size() == 64
+        && get(/databases/$(database)/documents/accessKeys/$(request.resource.data.keyHash)).data.enabled == true
+        && (request.resource.data.confirmedRevision == ''
+          || (current().enabled == true && request.resource.data.confirmedRevision == current().revision));
+    }
+    match /settings/current {
+      allow get: if validAccess();
+      allow list, write: if false;
+    }
+    match /rounds/{year} {
+      allow read, write: if false;
+      match /people/{person} {
+        allow get: if owner(year, person) || giver(year, current().revision, person);
+        allow list, write: if false;
+        match /wishes/{wish} {
+          allow read: if owner(year, person) || giver(year, current().revision, person);
+          allow create: if owner(year, person) && validWish(request.resource.data) && request.resource.data.createdAt == request.time;
+          allow update: if owner(year, person) && validWish(request.resource.data) && request.resource.data.createdAt == resource.data.createdAt;
+          allow delete: if owner(year, person);
+        }
+      }
+      match /revisions/{revision} {
+        allow read, write: if false;
+        match /assignments/{person} {
+          // Nur der eigene Brief; auch Auflisten bleibt verboten.
+          allow get: if participant(year, revision) && key().personId == person;
+          allow list, write: if false;
+        }
+        match /reservations/{person}/items/{wish} {
+          allow read: if giver(year, revision, person);
+          allow create: if giver(year, revision, person)
+            && request.resource.data.keys().hasOnly(['giverId','createdAt'])
+            && request.resource.data.giverId == key().personId && request.resource.data.createdAt == request.time
+            && exists(/databases/$(database)/documents/rounds/$(year)/people/$(person)/wishes/$(wish));
+          allow update: if false;
+          allow delete: if giver(year, revision, person) && resource.data.giverId == key().personId;
+        }
+      }
+    }
+    // Frühere offene oder private Prototyp-Datenräume sind bewusst nicht freigegeben.
+  }
+}
