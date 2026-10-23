@@ -12,37 +12,37 @@ window.WICHTEL_DATA = {
   ],
   "allocations": {
     "Lukas": [
-      "Wiebke",
-      "Levke"
-    ],
-    "Ute": [
-      "Lukas",
-      "Wiebke"
-    ],
-    "Janne": [
-      "Diana",
-      "Sven"
-    ],
-    "Diana": [
-      "Ute",
-      "Abed"
-    ],
-    "Wiebke": [
       "Sven",
       "Abed"
     ],
+    "Ute": [
+      "Sven",
+      "Abed"
+    ],
+    "Janne": [
+      "Ute",
+      "Wiebke"
+    ],
+    "Diana": [
+      "Janne",
+      "Wiebke"
+    ],
+    "Wiebke": [
+      "Lukas",
+      "Janne"
+    ],
     "Sven": [
       "Ute",
-      "Janne"
+      "Levke"
     ],
     "Levke": [
       "Lukas",
       "Diana"
     ],
     "Abed": [
-      "Janne",
+      "Diana",
       "Levke"
     ]
   },
-  "demo": true
+  "demo": false
 };

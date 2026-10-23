@@ -4,12 +4,7 @@ Mobile Webseite für die Weihnachtsrunde. Jede Person beschenkt zwei andere
 und erhält zwei Geschenke. Nur dieselbe Zweierkombination wie im Vorjahr
 ist ausgeschlossen. Ein einzelner Empfänger darf sich wiederholen.
 
-## Erster Entwurf
 
-Tannengrünes Layout mit Papierfarben, ohne Fotos. Die acht Namen stammen
-aus dem ursprünglichen Projekt. Die Vorjahresauslosung ist weiterhin ein
-erfundenes Beispiel, persönliche Ausschlüsse sind noch nicht übernommen.
-Der gespeicherte Jahrgang
 2026 ist eine Demo, keine echte Weihnachtsrunde. Zugriffsschutz ist noch
 nicht umgesetzt: Jeder kann andere Namen auswählen. Alle Ergebnisse
 sind im öffentlichen Repository und in der Webseite lesbar.
@@ -33,12 +28,7 @@ python -m http.server 8000 --directory site
 
 Dann http://localhost:8000 öffnen. Keine zusätzlichen Python-Pakete nötig.
 
-## GitHub Pages
 
-Unter **Settings → Pages → Source → GitHub Actions** einstellen.
-Danach **Actions → Webseite veröffentlichen → Run workflow** oder eine
-Änderung nach `main` hochladen. Erwartete Adresse:
-https://grosseskrokodil.github.io/ThiemoWichteln/
 
 ## Jahresrunde vorbereiten und auslosen
 

@@ -9,3 +9,5 @@ dialog{width:min(440px,calc(100% - 32px));border:1px solid var(--line);border-ra
 .version-two .hero h1{font-size:clamp(44px,9vw,76px)}.version-two .hero h1 #edition{display:block}.version-two .branch{top:8px;font-size:65px}
 
 .branch img{display:block;width:1em;height:1em}.wordmark-star{width:24px;height:24px}.recipient-mark{display:block;width:20px;height:20px}
+
+@media(max-width:480px){.hero .branch{font-size:38px;right:4px}.version-two .hero .branch{top:12px}}

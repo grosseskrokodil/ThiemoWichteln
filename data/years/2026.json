@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "demo": true,
+  "demo": false,
   "people": [
     "Lukas",
     "Ute",
@@ -12,39 +12,39 @@
     "Abed"
   ],
   "exclusions": {},
-  "created_at": "2026-10-22T14:34:30.438174+00:00",
+  "created_at": "2026-10-22T14:45:52.538376+00:00",
   "previous_year_checked": true,
   "allocations": {
     "Lukas": [
-      "Wiebke",
-      "Levke"
-    ],
-    "Ute": [
-      "Lukas",
-      "Wiebke"
-    ],
-    "Janne": [
-      "Diana",
-      "Sven"
-    ],
-    "Diana": [
-      "Ute",
-      "Abed"
-    ],
-    "Wiebke": [
       "Sven",
       "Abed"
     ],
+    "Ute": [
+      "Sven",
+      "Abed"
+    ],
+    "Janne": [
+      "Ute",
+      "Wiebke"
+    ],
+    "Diana": [
+      "Janne",
+      "Wiebke"
+    ],
+    "Wiebke": [
+      "Lukas",
+      "Janne"
+    ],
     "Sven": [
       "Ute",
-      "Janne"
+      "Levke"
     ],
     "Levke": [
       "Lukas",
       "Diana"
     ],
     "Abed": [
-      "Janne",
+      "Diana",
       "Levke"
     ]
   }
