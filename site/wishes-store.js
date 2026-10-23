@@ -75,12 +75,12 @@ export async function connectStore() {
     }, onError));
     return () => unsub.forEach(stop => stop());
   }
-  async function saveWish(person, id, text, link) {
+  async function saveWish(person, id, text) {
     ready();
     if (person !== actor) throw new Error('Bitte nur eigene Wünsche bearbeiten.');
-    const fields = { ...validateWish(text, link), updatedAt: serverTimestamp() };
+    const fields = { text: validateWish(text).text, updatedAt: serverTimestamp() };
     if (id) return updateDoc(wishRef(person, id), fields);
-    return addDoc(collection(db, 'rounds', active.year, 'people', person, 'wishes'), { ...fields, createdAt: serverTimestamp() });
+    return addDoc(collection(db, 'rounds', active.year, 'people', person, 'wishes'), { ...fields, link: '', createdAt: serverTimestamp() });
   }
   async function removeWish(person, id) {
     ready();

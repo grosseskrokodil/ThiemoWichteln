@@ -19,7 +19,7 @@ den vollständigen Teil nach `#key=` behalten. Das Layout lost nichts aus.
 2. Den aktiven Jahrgang anzeigen. Noch keine Empfänger laden.
 3. „Meinen Brief öffnen“ → „Bist du wirklich …?“ → „Ja, das bin ich“.
 4. Erst dann die eigene Zuordnung und die zwei zugehörigen Namen laden.
-5. Eigene Wünsche mit optionalen Produktlinks pflegen; bei den beiden
+5. Eigene Wünsche als Text pflegen; bei den beiden
    Empfängern Wünsche ansehen und reservieren beziehungsweise freigeben.
 
 Die Datenbankregeln verhindern das Lesen anderer Zuordnungen, das Ändern

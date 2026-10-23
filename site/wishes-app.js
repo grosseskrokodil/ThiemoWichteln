@@ -38,19 +38,10 @@ function renderWishes(wishes) {
   for (const wish of wishes) {
     const article = document.createElement('article'); article.className = 'wish-card';
     const text = document.createElement('p'); text.className = 'wish-text'; text.textContent = wish.text; article.append(text);
-    if (wish.link) {
-      try {
-        const url = new URL(wish.link);
-        if (['https:', 'http:'].includes(url.protocol) && !url.username && !url.password) {
-          const link = document.createElement('a'); link.href = url.href; link.textContent = 'Produkt ansehen';
-          link.target = '_blank'; link.rel = 'noopener noreferrer'; article.append(link);
-        }
-      } catch { /* Ungültige importierte Links werden nicht ausführbar gemacht. */ }
-    }
     const actions = document.createElement('div'); actions.className = 'wish-actions';
     if (target.id === me.id) {
       actions.append(cardButton('Bearbeiten', () => {
-        editing = wish.id; $('wish-text').value = wish.text; $('wish-link').value = wish.link;
+        editing = wish.id; $('wish-text').value = wish.text;
         $('save-wish').textContent = 'Änderungen speichern'; $('cancel-edit').hidden = false; $('wish-text').focus();
       }));
       actions.append(cardButton('Löschen', () => {
@@ -75,14 +66,13 @@ function renderWishes(wishes) {
 }
 function showList(person, restoring = false) {
   if (busy) return;
-  if (!restoring && ($('wish-text').value.trim() || $('wish-link').value.trim()) && !window.confirm('Ungespeicherte Änderungen verwerfen?')) return;
+  if (!restoring && $('wish-text').value.trim() && !window.confirm('Ungespeicherte Änderungen verwerfen?')) return;
   const current = ++generation; stopWatch(); clearEditor(); target = person;
   $('list-title').textContent = person.id === me.id ? 'Meine Wunschliste' : `Wünsche von ${person.name}`;
   $('list-hint').textContent = person.id === me.id ? 'Hier trägst du deine Wünsche ein. Reservierungen siehst du in deiner eigenen Liste nicht.' : 'Stimmt euch über die Reservierungen ab. Die beschenkte Person sieht sie in ihrer eigenen Ansicht nicht.';
   $('editor').hidden = person.id !== me.id;
   if (restoring && retainedDraft) {
     $('wish-text').value = retainedDraft.text;
-    $('wish-link').value = retainedDraft.link;
     // Als neuer Entwurf, weil das alte Wunsch-Dokument zu einem anderen Jahr gehören kann.
     editing = null; retainedDraft = null;
   }
@@ -108,7 +98,7 @@ function dashboard(profile) {
 
 $('wish-form').addEventListener('submit', event => {
   event.preventDefault();
-  write(async () => { await store.saveWish(me.id, editing, $('wish-text').value, $('wish-link').value); clearEditor(); }, 'Wunsch gespeichert.');
+  write(async () => { await store.saveWish(me.id, editing, $('wish-text').value); clearEditor(); }, 'Wunsch gespeichert.');
 });
 $('cancel-edit').addEventListener('click', clearEditor);
 $('identity-form').addEventListener('submit', event => {
@@ -131,7 +121,7 @@ window.addEventListener('pagehide', () => { stopWatch(); stopRound(); });
 window.addEventListener('pageshow', event => { if (event.persisted) location.reload(); });
 
 function lockRound(error) {
-  if ($('wish-text').value.trim() || $('wish-link').value.trim()) retainedDraft = { text: $('wish-text').value, link: $('wish-link').value };
+  if ($('wish-text').value.trim()) retainedDraft = { text: $('wish-text').value };
   ++generation; stopWatch();
   $('dashboard').hidden = true;
   $('wish-list').replaceChildren();
