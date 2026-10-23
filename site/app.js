@@ -53,7 +53,7 @@
     list.replaceChildren();
     recipients.forEach(recipient => {
       const item = document.createElement('div'); item.className = 'recipient';
-      const mark = document.createElement('span'); mark.className = 'recipient-mark'; mark.textContent = '✳'; mark.setAttribute('aria-hidden', 'true');
+      const mark = document.createElement('img'); mark.className = 'recipient-mark'; mark.src = 'star.svg'; mark.alt = ''; mark.setAttribute('aria-hidden', 'true');
       const label = document.createElement('span'); label.textContent = recipient;
       item.append(mark, label); list.append(item);
     });
