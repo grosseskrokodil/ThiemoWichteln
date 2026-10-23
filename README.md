@@ -3,7 +3,7 @@
 ## Vier Seitenversionen
 
 - `site/index.html`: ohne Firebase, Ursprungstext.
-- `site/version-2.html`: ohne Firebase, reduzierter Text.
+- `site/index-kurz.html`: ohne Firebase, reduzierter Text.
 - `site/firebase.html`: mit Firebase, Ursprungstext und persönlichem Link.
 - `site/firebase-kurz.html`: mit Firebase, reduzierter Text und persönlichem Link.
 

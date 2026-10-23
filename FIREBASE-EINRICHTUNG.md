@@ -5,7 +5,7 @@
 | Datei in `site/` | Texte | Zuordnung und Daten |
 | --- | --- | --- |
 | `index.html` | Ursprungstext „Post für dich.“ | Ohne Firebase, bisherige öffentliche Zuordnung |
-| `version-2.html` | „Wichtelrunde …“, weniger Text | Ohne Firebase, dieselbe öffentliche Zuordnung |
+| `index-kurz.html` | „Wichtelrunde …“, weniger Text | Ohne Firebase, dieselbe öffentliche Zuordnung |
 | `firebase.html` | Ursprungstext | Persönlicher Link, geschützte Zuordnung und Wunschlisten |
 | `firebase-kurz.html` | Reduzierter Text | Derselbe persönliche Linkcode und dieselben Firebase-Daten |
 

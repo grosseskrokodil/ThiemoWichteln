@@ -84,7 +84,7 @@ class WishesSetupTests(unittest.TestCase):
 
     def test_exactly_four_html_versions_and_private_pages_never_load_public_data(self):
         site = Path(__file__).resolve().parents[1] / 'site'
-        self.assertEqual({p.name for p in site.glob('*.html')}, {'index.html','version-2.html','firebase.html','firebase-kurz.html'})
+        self.assertEqual({p.name for p in site.glob('*.html')}, {'index.html','index-kurz.html','firebase.html','firebase-kurz.html'})
         for filename in ['firebase.html','firebase-kurz.html']:
             html = (site / filename).read_text(encoding='utf-8')
             self.assertNotIn('src="data.js"', html)
